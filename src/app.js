@@ -125,6 +125,13 @@ App = {
     window.location.reload()
   },
 
+  toggleCompleted: async (event) => {
+    App.setLoading(true)
+    const taskId = event.target.name
+    await App.todoList.toggleCompleted(taskId)
+    window.location.reload()
+  },
+
   setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
